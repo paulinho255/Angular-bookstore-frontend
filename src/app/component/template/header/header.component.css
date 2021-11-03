@@ -1,0 +1,11 @@
+img {
+    height: 2em;
+}
+span {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    height: 10%;
+}
