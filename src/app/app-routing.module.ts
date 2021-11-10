@@ -1,3 +1,4 @@
+import { CategoriaCreateComponent } from './component/views/categoria/categoria-create/categoria-create.component';
 import { CategoriaReadComponent } from './component/views/categoria/categoria-read/categoria-read.component';
 import { HomeComponent } from './component/views/home/home.component';
 import { NgModule} from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'categorias',
     component: CategoriaReadComponent
+  },
+  {
+    path: 'categorias/create',
+    component: CategoriaCreateComponent
   }
 ];
 
