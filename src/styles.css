@@ -2,3 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*Configuration colors for snackbar and snakbar-action-button(angular material)*/
+.messageWarn {
+    color: white;
+    background-color: rgb(241, 52, 52);
+}
+.mat-simple-snackbar-action {
+    color: white !important;
+}

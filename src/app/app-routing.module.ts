@@ -1,3 +1,4 @@
+import { CategorioDeleteComponent } from './component/views/categoria/categorio-delete/categorio-delete.component';
 import { CategoriaCreateComponent } from './component/views/categoria/categoria-create/categoria-create.component';
 import { CategoriaReadComponent } from './component/views/categoria/categoria-read/categoria-read.component';
 import { HomeComponent } from './component/views/home/home.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'categorias/create',
     component: CategoriaCreateComponent
+  },
+  {
+    path: 'categorias/delete/:id',
+    component: CategorioDeleteComponent
   }
 ];
 

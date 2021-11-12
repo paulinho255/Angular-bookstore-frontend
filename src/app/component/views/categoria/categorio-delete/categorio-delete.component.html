@@ -1,0 +1,15 @@
+<form>
+    <h1>Removendo uma Categoria</h1>
+    <mat-form-field class="form">
+        <mat-label>Nome</mat-label>
+        <input matInput [value]="categoria.nome" type="text" name="nome" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput [value]="categoria.descricao" type="text" name="descricao" disabled></textarea>
+    </mat-form-field>    
+    <div class="buttons">
+        <button class="mat-elevation-z8" (click)="delete()" mat-stroked-button color="primary">REMOVER</button>
+        <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>
