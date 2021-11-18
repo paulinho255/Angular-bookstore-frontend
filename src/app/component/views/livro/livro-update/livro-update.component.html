@@ -1,5 +1,5 @@
 <form>
-    <h1>Novo Livro</h1>
+    <h1>Alterar Livro</h1>
     <mat-form-field class="form">
         <mat-label>Titulo</mat-label>
         <input matInput [(ngModel)]="livro.titulo" [formControl]="titulo" required type="text" name="titulo" placeholder="Ex. Tecnologia Moderna" maxlength="100">
@@ -17,7 +17,7 @@
     </mat-form-field>  
 
     <div class="buttons">
-        <button [disabled]="getMessage()" (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary">CRIAR</button>
+        <button [disabled]="getMessage()" (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary">ATUALIZAR</button>
         <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
     </div>
 </form>

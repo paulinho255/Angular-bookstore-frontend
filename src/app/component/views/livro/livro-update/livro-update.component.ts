@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-livro-create',
-  templateUrl: './livro-create.component.html',
-  styleUrls: ['./livro-create.component.css']
+  selector: 'app-livro-update',
+  templateUrl: './livro-update.component.html',
+  styleUrls: ['./livro-update.component.css']
 })
-export class LivroCreateComponent implements OnInit {
+export class LivroUpdateComponent implements OnInit {
   titulo = new FormControl('', [Validators.minLength(3)])
   autor = new FormControl('', [Validators.minLength(3)])
   texto = new FormControl('', [Validators.minLength(10)])
@@ -28,14 +28,21 @@ export class LivroCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id_cat = this.activeRoute.snapshot.paramMap.get('id_cat')
+    this.livro.id = this.activeRoute.snapshot.paramMap.get('id')
+    this.finById()
   }
   create(): void {
-    this.service.create(this.livro, this.id_cat).subscribe((response)=> {
+    this.service.update(this.livro).subscribe((response)=> {
       this.route.navigate([`categorias/${this.id_cat}/livros`])
-      this.service.message('Livro has sucessfully created.')
+      this.service.message('Livro has sucessfully updated.')
     }, err => {
       this.route.navigate([`categorias/${this.id_cat}/livros`])
-      this.service.message('Error! It was not possible to create livro in database. '+err)
+      this.service.message('Error! It was not possible to update livro in database. '+err)
+    })
+  }
+  finById():void{
+    this.service.findById(this.livro.id).subscribe((response)=>{
+      this.livro = response
     })
   }
   getMessage(){
